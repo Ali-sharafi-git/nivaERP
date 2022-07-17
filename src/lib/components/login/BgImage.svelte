@@ -2,4 +2,4 @@
 	export let imageUrl: string;
 </script>
 
-<img src={imageUrl} alt="background not found" />
+<div class="w-screen h-screen bg-cover" style="background-image:url({imageUrl}) ;" />
