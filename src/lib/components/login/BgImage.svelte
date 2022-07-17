@@ -2,4 +2,6 @@
 	export let imageUrl: string;
 </script>
 
-<div class="w-screen h-screen bg-cover" style="background-image:url({imageUrl}) ;" />
+<div class="w-screen h-screen bg-cover" style="background-image:url({imageUrl}) ;">
+	<slot />
+</div>
