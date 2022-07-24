@@ -1,0 +1,41 @@
+<script lang="ts">
+	export let text: string = '';
+</script>
+
+<div class="my-5 strike">
+	<span>{text}</span>
+</div>
+
+<style>
+	.strike {
+		display: block;
+		text-align: center;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.strike > span {
+		position: relative;
+		display: inline-block;
+	}
+
+	.strike > span:before,
+	.strike > span:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		width: 9999px;
+		height: 1px;
+		background: var(--cds-text-03);
+	}
+
+	.strike > span:before {
+		right: 100%;
+		margin-right: 15px;
+	}
+
+	.strike > span:after {
+		left: 100%;
+		margin-left: 15px;
+	}
+</style>

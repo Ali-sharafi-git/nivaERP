@@ -10,6 +10,8 @@ const lang = {
     forgotPassword: 'رمز عبور خود را فراموش کرده اید؟',
     resetPassword: 'بازیابی رمز عبور',
     or: "یا",
+    doRegister: "ثبت نام کنید",
+    doLogin: "وارد شوید",
     // errors
     emailRequired: 'البريد الإلكتروني مطلوب.',
     emailInvalid: 'البريد الإلكتروني غير صالح.',

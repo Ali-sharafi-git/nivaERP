@@ -9,20 +9,22 @@
 	export let view: String;
 
 	const handleClick = () => {
-		view = 'signup';
+		view = 'login';
 	};
 </script>
 
 <div class="h-screen w-1/4 bg-white fixed p-5 opacity-90">
-	<NivaTitle text={ls.auth.login} />
+	<NivaTitle text={ls.auth.register} />
 
 	<NivaInput labelText={ls.auth.email} />
 
-	<NivaInput labelText={ls.auth.password} type="password" />
+	<NivaInput labelText={ls.auth.password} />
 
-	<NivaButton>{ls.auth.login}</NivaButton>
+	<NivaInput labelText={ls.auth.confirmPassword} />
+
+	<NivaButton>{ls.auth.register}</NivaButton>
 
 	<NivaDivider text={ls.auth.or} />
 
-	<NivaButton align="center" kind="ghost" on:Click={handleClick}>{ls.auth.doRegister}</NivaButton>
+	<NivaButton align="center" kind="ghost" on:Click={handleClick}>{ls.auth.doLogin}</NivaButton>
 </div>

@@ -1,15 +1,7 @@
 <script lang="ts">
-	import { TextInput } from '@svelteuidev/core';
+	import { TextInput } from 'carbon-components-svelte';
 
-	export let cssClass: string;
+	export let cssClass: string = '';
 </script>
 
-<div class="container">
-	<TextInput size="xs" class={`txtIcon ${cssClass}`} {...$$props} />
-</div>
-
-<style>
-	.container {
-		direction: ltr;
-	}
-</style>
+<TextInput size="sm" class={`mb-5 ${cssClass}`} {...$$props} />

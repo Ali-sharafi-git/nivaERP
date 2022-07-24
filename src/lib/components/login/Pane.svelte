@@ -1,10 +1,18 @@
 <script lang="ts">
 	import BG from './BgImage.svelte';
-	import Pane from './Login.svelte';
+	import Login from './Login.svelte';
+	import Signup from './Signup.svelte';
 
 	export let imageUrl: string;
+	let view: string = 'login';
+
+	$: console.log('view===', view);
 </script>
 
 <BG {imageUrl}>
-	<Pane>RRRRRRRRRRR +++++++</Pane>
+	{#if view === 'login'}
+		<Login bind:view />
+	{:else}
+		<Signup bind:view />
+	{/if}
 </BG>
