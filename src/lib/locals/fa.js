@@ -21,7 +21,32 @@ const lang = {
     confirmPasswordRequired: 'تأكيد كلمة المرور مطلوب.',
     confirmPasswordMatch: 'تأكيد كلمة المرور غير متطابق.',
 
+  },
+  general:{
+    appName:'نیوا',
+    purchase: 'خرید',
+    inventory:"انبار",
+    sales:"فروش",
+    payment:"دریافت/پرداخت",
+    reports:"گزارشات",
+    settings:"تنظیمات",
+    dashboard:"داشبورد",
+
+  },
+
+  inventory:{
+    inventory:"انبار",
+    input:"ورود به انبار",
+    output:"خروج از انبار",
+    addNewProduct:"اضافه کردن کالای جدید",
+    addNewCategory:"اضافه کردن دسته جدید",
+    addNewBrand:"اضافه کردن برند جدید",
+    addNewUnit:"اضافه کردن واحد جدید",
+    addNewWarehouse:"اضافه کردن انبار جدید",
+    addNewSupplier:"اضافه کردن تامین کننده جدید",
+    product:"تعریف کالا",
   }
 }
+
 
 export default lang

@@ -5,8 +5,6 @@
 
 	export let imageUrl: string;
 	let view: string = 'login';
-
-	$: console.log('view===', view);
 </script>
 
 <BG {imageUrl}>

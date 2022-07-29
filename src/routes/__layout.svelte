@@ -1,64 +1,59 @@
-<script>
+<script context="module">
+	export async function load() {
+		return {
+			status: 301,
+			redirect: '/auth/login'
+		};
+	}
+</script>
+
+<script lang="ts">
+	import AppSwitcherItems from '$lib/components/ui/appSwitcherItems/SwitcherItems.svelte';
+	import ls from '$lib/stores/localStore';
+	import { sideMenuStore } from '$lib/stores/sideMenuStore';
+	import type { MenuItem } from '$lib/types/general/sideMenu';
 	import 'carbon-components-svelte/css/all.css';
 	import '../app.css';
 
 	import {
-		Header,
-		HeaderNav,
-		HeaderNavItem,
-		HeaderNavMenu,
-		SideNav,
-		SideNavItems,
-		SideNavMenu,
-		SideNavMenuItem,
-		SideNavLink,
-		SideNavDivider,
-		SkipToContent,
+		Column,
 		Content,
 		Grid,
-		Row,
-		Column,
-		HeaderUtilities,
+		Header,
+		HeaderAction,
 		HeaderPanelLinks,
-		HeaderPanelLink,
-		HeaderPanelDivider,
-		HeaderAction
+		HeaderUtilities,
+		Row,
+		SideNav,
+		SideNavItems,
+		SideNavLink,
+		SkipToContent
 	} from 'carbon-components-svelte';
-	import Fade from 'carbon-icons-svelte/lib/Fade.svelte';
 
 	let isSideNavOpen = false;
 	let isOpen = false;
+
+	let menuItems: MenuItem[];
+	$: menuItems = $sideMenuStore;
 </script>
 
-<Header company="نیوا" bind:isSideNavOpen>
+<Header company={ls.general.appName} bind:isSideNavOpen>
 	<svelte:fragment slot="skip-to-content">
 		<SkipToContent />
 	</svelte:fragment>
 	<HeaderUtilities>
 		<HeaderAction bind:isOpen>
 			<HeaderPanelLinks>
-				<HeaderPanelDivider>Switcher subject 1</HeaderPanelDivider>
-				<HeaderPanelLink>Switcher item 1</HeaderPanelLink>
-				<HeaderPanelDivider>Switcher subject 2</HeaderPanelDivider>
-				<HeaderPanelLink>Switcher item 1</HeaderPanelLink>
-				<HeaderPanelLink>Switcher item 2</HeaderPanelLink>
-				<HeaderPanelLink>Switcher item 3</HeaderPanelLink>
-				<HeaderPanelLink>Switcher item 4</HeaderPanelLink>
-				<HeaderPanelLink>Switcher item 5</HeaderPanelLink>
+				<AppSwitcherItems />
 			</HeaderPanelLinks>
 		</HeaderAction>
 	</HeaderUtilities>
 
 	<SideNav style={'right:0px'} bind:isOpen={isSideNavOpen} fixed rail>
 		<SideNavItems>
-			<SideNavLink class="navLink" text="تعریف کالا" icon={Fade} />
-			<SideNavLink class="navLink" text="ورود به انبار" icon={Fade} />
-			<SideNavLink class="navLink" text="خروج از انبار" icon={Fade} />
-			<!-- <SideNavMenu text="Menu">
-				<SideNavMenuItem href="/" text="Link 1" />
-				<SideNavMenuItem href="/" text="Link 2" />
-				<SideNavMenuItem href="/" text="Link 3" />
-			</SideNavMenu> -->
+			{#each menuItems as item}
+				<SideNavLink class="navLink" href={item.href} text={item.label} icon={item.icon} />
+			{/each}
 		</SideNavItems>
 	</SideNav>
 </Header>

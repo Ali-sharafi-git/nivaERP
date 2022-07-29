@@ -2,20 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-bg: theme(colors.rose.800);
+  --nav-bg: theme(colors.pink.50);
+  --switcher-bg: theme(colors.stone.800);
+  /* --switcher-font-color: theme(colors.stone.100); */
+}
+
 body {
   font-family: "Noto Sans Arabic",
     "Helvetica Neue",
     Helvetica,
     Arial,
-    sans-serif;
+    sans-serif !important;
 }
 
 .nivaButton {
-  padding-left: 60px;
-  padding-right: 12px;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
 }
 
 .navLink div {
   margin-right: 0px !important;
   margin-left: 16px !important;
+}
+
+header {
+  background-color: var(--header-bg) !important;
+}
+
+header a span {
+  font-size: x-large;
+}
+
+nav {
+  background-color: var(--nav-bg) !important;
+}
+
+.bx--header__actions svg {
+  display: flex !important;
+}
+
+.bx--header__action:focus {
+  border: none;
+}
+
+.bx--header__action:hover {
+  background-color: var(--header-bg) !important;
+}
+
+.bx--header__action--active {
+  background-color: var(--header-bg) !important;
+}
+
+.bx--header-panel {
+  right: auto;
+  left: 0px;
+  background-color: var(--switcher-bg) !important;
+}
+
+.bx--switcher__item {
+  color: var(--switcher-bg) !important;
 }
