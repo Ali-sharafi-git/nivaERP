@@ -16,3 +16,7 @@ export function generateToken (user) {
   }
   return jwt.sign(payload, variables.JWT_SECRET,{algorithm: 'HS256', expiresIn: '6h'})
 }
+
+export function hashPassword (password) {
+  return bcrypt.hashSync(password, 10)
+}

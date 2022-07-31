@@ -13,14 +13,9 @@ const lang = {
     doRegister: "ثبت نام کنید",
     doLogin: "وارد شوید",
     // errors
-    emailRequired: 'البريد الإلكتروني مطلوب.',
-    emailInvalid: 'البريد الإلكتروني غير صالح.',
-    passwordRequired: 'كلمة المرور مطلوبة.',
-    passwordMinLength: 'كلمة المرور يجب أن تكون أكثر من 6 أحرف.',
-    passwordMaxLength: 'كلمة المرور يجب أن تكون أقل من 20 حرف.',
-    confirmPasswordRequired: 'تأكيد كلمة المرور مطلوب.',
-    confirmPasswordMatch: 'تأكيد كلمة المرور غير متطابق.',
-
+    invalidCredentials: 'نام کاربری یا کلمه عبور صحیح نیست.',
+    registerEmailOrUsernameRequired: 'نام و نام کاربری و ایمیل الزامی است',
+    registerEmailAlreadyExists: 'این ایمیل قبلا ثبت شده است',
   },
   general:{
     appName:'نیوا',
