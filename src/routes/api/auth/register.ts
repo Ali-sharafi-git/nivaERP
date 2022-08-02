@@ -15,13 +15,14 @@ export async function POST ({request}){
 
   // Check if email already exists
   const existingUser = await getUserForLogin(email);
+  console.log('existingUser', existingUser)
   if (existingUser) {
     return RE(400, ls.auth.registerEmailAlreadyExists);
   }
 
-  const hashedPassword = hashPassword(password)
+  const passwordHash = hashPassword(password)
 
-  const user = await insertUser({firstName, lastName, email, password})
+  const user = await insertUser({firstName, lastName, email, passwordHash})
 
   return RS({user})
 }

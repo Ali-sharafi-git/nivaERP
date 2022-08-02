@@ -6,5 +6,4 @@ export type User = {
   lastName: string;
   createdAt: Date?;
   updatedAt: Date?;
-
 }
